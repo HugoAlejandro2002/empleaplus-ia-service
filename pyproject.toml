@@ -2,10 +2,12 @@
 name = "resume_generator"
 version = "0.1.0"
 description = "resume-generator using crewAI"
-authors = [{ name = "Your Name", email = "you@example.com" }]
+authors = [{ name = "Hugo Alejandro Apaza Huaycho", email = "apazahuaychohugoalejandro@gmail.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
-    "crewai[tools]>=0.105.0,<1.0.0"
+    "crewai[tools]>=0.105.0,<1.0.0",
+    "docling>=2.31.0",
+    "fastapi[standard]>=0.115.12",
 ]
 
 [project.scripts]
@@ -21,3 +23,20 @@ build-backend = "hatchling.build"
 
 [tool.crewai]
 type = "crew"
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N"]
+ignore = ["E501"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.8",
+]

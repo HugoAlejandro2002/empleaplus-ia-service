@@ -1,0 +1,53 @@
+\documentclass[10pt, letterpaper]{article}
+
+
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0,0,0}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{hyperref}
+\usepackage{charter}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{0pt}{0.3cm}{0.2cm}
+
+\begin{document}
+
+{{ header }}
+
+
+\section*{Objetivo}
+{{ summary }}
+
+
+\section*{Educación}
+{{ education }}
+
+
+\section*{Experiencia Profesional}
+{{ experience }}
+
+
+\section*{Languages \& Skills}
+{{ skills_and_languages }}
+
+
+\section*{Certifications}
+{{ certifications }}
+
+\end{document}

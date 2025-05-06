@@ -1,17 +1,85 @@
-research_task:
+generate_cv:
   description: >
-    Conduct a thorough research about {topic}
-    Make sure you find any interesting and relevant information given
-    the current year is {current_year}.
-  expected_output: >
-    A list with 10 bullet points of the most relevant information about {topic}
-  agent: researcher
+    Redacta un currículum profesional utilizando exclusivamente los siguientes datos del usuario:
 
-reporting_task:
-  description: >
-    Review the context you got and expand each topic into a full section for a report.
-    Make sure the report is detailed and contains any and all relevant information.
+    - Datos personales: {personal_data}
+    - Educación: {education}
+    - Experiencia laboral: {experience}
+    - Habilidades: {skills}
+    - Idiomas: {languages}
+    - Certificaciones: {certifications}
+    - Resumen profesional: {professional_summary}
+
+    Para cada experiencia laboral:
+
+    - Redacta 1 a 3 oraciones de éxito que resuman las principales acciones y logros.
+    - Cada oración de éxito debe tener esta estructura:
+      - Verbo de acción + actividad concreta + resultado o impacto (si aplica).
+    - No copies literalmente los campos. Procesa la información y redacta logros como se muestra en tus ejemplos.
+
+    No agregues contenido inventado. Usa tu conocimiento solo como guía de redacción.
+
   expected_output: >
-    A fully fledged report with the main topics, each with a full section of information.
-    Formatted as markdown without '```'
-  agent: reporting_analyst
+    Un currículum redactado profesionalmente, en lenguaje natural, dividido en secciones claras:
+    - Nombre completo
+    - Datos de contacto
+    - Resumen profesional
+    - Educación
+    - Experiencia profesional (con oraciones de éxito como logros)
+    - Habilidades
+    - Idiomas
+    - Certificaciones
+
+    No devuelvas JSON. Solo texto limpio y bien redactado.
+  agent: cv_writer
+
+
+structure_cv:
+  description: >
+    Convierte el siguiente currículum redactado en texto a un JSON con la siguiente estructura obligatoria:
+
+    {
+      fullName: string,
+      contact: {
+        email: string,
+        phone: string,
+        linkedin?: string
+      },
+      summary: string,
+      education: [
+        {
+          institution: string,
+          degree: string,
+          startDate: string,
+          endDate: string,
+          description: string
+        }
+      ],
+      experience: [
+        {
+          company: string,
+          role: string,
+          startDate: string,
+          endDate: string|null,
+          achievements: [string]
+        }
+      ],
+      skills: [
+        { name: string, level: string }
+      ],
+      languages: [
+        { name: string, proficiency: string }
+      ]
+      certifications: [
+        {
+          name: string,
+          institution: string,
+          year: number
+        }
+      ]
+    }
+
+    Asegúrate de que el JSON sea válido y limpio. Solo responde con JSON.
+  expected_output: >
+    Un JSON limpio y estructurado con los campos mencionados. No incluyas explicaciones ni formato extra. Solo el JSON válido.
+  agent: json_formatter

@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 import sys
 import warnings
-
 from datetime import datetime
 
 from resume_generator.crew import ResumeGenerator
@@ -18,12 +17,55 @@ def run():
     Run the crew.
     """
     inputs = {
-        'topic': 'AI LLMs',
-        'current_year': str(datetime.now().year)
+        "personal_data": {
+            "full_name": "Ana María Gutiérrez",
+            "email": "ana@example.com",
+            "phone": "+591 71234567",
+            "country": "Bolivia",
+            "city": "La Paz",
+            "birth_date": "1998-03-14"
+        },
+        "education": [
+            {
+                "institution": "Universidad Privada Boliviana",
+                "degree": "Ingeniería de Sistemas",
+                "start_year": "2018",
+                "end_year": "2023",
+                "notes": "Graduada con honores"
+            }
+        ],
+        "experience": [
+            {
+                "project_name": "Feria de Ciencia",
+                "role": "Diseñé el prototipo de un sistema solar",
+                "achievements": "Fuimos finalistas del concurso",
+                "teamwork": "Lideré un grupo de 3 personas",
+                "coordination": "Área de Logística",
+                "presentation": "Jurado universitario"
+            }
+        ],
+        "skills": [
+            { "skill": "Excel", "level": "Advanced" },
+            { "skill": "Canva", "level": "Intermediate" }
+        ],
+        "languages": [
+            { "language": "English", "level": "Intermediate" }
+        ],
+        "certifications": [
+            {
+                "course": "Curso de Introducción a Git",
+                "provider": "Platzi",
+                "year": "2022",
+                "certificate": "https://example.com/git-cert"
+            }
+        ],
+        "professional_summary": {
+            "summary": "Soy una estudiante apasionada por la tecnología, con experiencia en proyectos escolares y habilidades en herramientas digitales. Estoy motivada por crecer profesionalmente y aportar valor a un equipo de trabajo."
+        }
     }
-    
     try:
-        ResumeGenerator().crew().kickoff(inputs=inputs)
+        ans = ResumeGenerator().crew().kickoff(inputs=inputs)
+        print(ans.raw)
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
 

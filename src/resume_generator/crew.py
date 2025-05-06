@@ -1,13 +1,21 @@
 from crewai import Agent, Crew, Process, Task
+from crewai.knowledge.source.crew_docling_source import CrewDoclingSource
 from crewai.project import CrewBase, agent, crew, task
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
+content_source = CrewDoclingSource(
+    file_paths=[
+        "https://twiliofilesacceptgo.s3.us-east-1.amazonaws.com/cv_oraciones_modelo.md"
+    ],
+)
+
+
 @CrewBase
 class ResumeGenerator():
-	"""ResumeGenerator crew"""
+	"""ResumeGenerator crew."""
 
 	# Learn more about YAML configuration files here:
 	# Agents: https://docs.crewai.com/concepts/agents#yaml-configuration-recommended
@@ -18,38 +26,38 @@ class ResumeGenerator():
 	# If you would like to add tools to your agents, you can learn more about it here:
 	# https://docs.crewai.com/concepts/agents#agent-tools
 	@agent
-	def researcher(self) -> Agent:
+	def cv_writer(self) -> Agent:
 		return Agent(
-			config=self.agents_config['researcher'],
-			verbose=True
+			config=self.agents_config['cv_writer'],
+            verbose=True,
+            knowledge_sources=[content_source]
 		)
 
 	@agent
-	def reporting_analyst(self) -> Agent:
+	def json_formatter(self) -> Agent:
 		return Agent(
-			config=self.agents_config['reporting_analyst'],
-			verbose=True
-		)
+            config=self.agents_config['json_formatter'],
+            verbose=True
+        )
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
-	# https://docs.crewai.com/concepts/tasks#overview-of-a-task
+	# https://docs.crewai.com/concepts/tasks#overview-of-a-task	
 	@task
-	def research_task(self) -> Task:
+	def generate_cv(self) -> Task:
 		return Task(
-			config=self.tasks_config['research_task'],
-		)
+            config=self.tasks_config['generate_cv']
+        )
 
 	@task
-	def reporting_task(self) -> Task:
+	def structure_cv(self) -> Task:
 		return Task(
-			config=self.tasks_config['reporting_task'],
-			output_file='report.md'
-		)
+            config=self.tasks_config['structure_cv'],
+        )
 
 	@crew
 	def crew(self) -> Crew:
-		"""Creates the ResumeGenerator crew"""
+		"""Creates the ResumeGenerator crew."""
 		# To learn how to add knowledge sources to your crew, check out the documentation:
 		# https://docs.crewai.com/concepts/knowledge#what-is-knowledge
 
