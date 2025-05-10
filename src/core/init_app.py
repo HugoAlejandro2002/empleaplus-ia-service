@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from controllers import cv_router
+from .router import router as api_router
 
 
 def create_app() -> FastAPI:
@@ -21,6 +21,6 @@ def create_app() -> FastAPI:
     )
 
     # Registrar rutas
-    app.include_router(cv_router, prefix="/resume", tags=["CV Generator"])
+    app.include_router(api_router, prefix="/api/v1")
 
     return app

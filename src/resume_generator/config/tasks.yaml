@@ -17,7 +17,10 @@ generate_cv:
       - Verbo de acción + actividad concreta + resultado o impacto (si aplica).
     - No copies literalmente los campos. Procesa la información y redacta logros como se muestra en tus ejemplos.
 
-    No agregues contenido inventado. Usa tu conocimiento solo como guía de redacción.
+    No agregues contenido inventado bajo ninguna circunstancia.
+    Está terminantemente prohibido inferir, completar o enriquecer la información con conocimiento externo.
+    Únicamente debes reescribir y redactar profesionalmente lo que está explícitamente contenido en los datos proporcionados.
+    Si falta información en una sección, simplemente omítela o deja el campo vacío.
 
   expected_output: >
     Un currículum redactado profesionalmente, en lenguaje natural, dividido en secciones claras:
@@ -31,6 +34,8 @@ generate_cv:
     - Certificaciones
 
     No devuelvas JSON. Solo texto limpio y bien redactado.
+    El contenido debe ser una versión redactada profesionalmente, pero que conserve exactamente la información entregada.
+    No amplíes ni modifiques los datos.
   agent: cv_writer
 
 

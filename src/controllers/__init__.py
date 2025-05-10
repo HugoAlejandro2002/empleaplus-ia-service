@@ -1,3 +1,3 @@
-from .resume_controller import router as cv_router
+from .resume_controller import router as resume_router
 
-__all__ = ["cv_router"]
+__all__ = ["resume_router"]

@@ -38,7 +38,7 @@ class Language(BaseModel):
 class Certification(BaseModel):
     name: str
     institution: str
-    year: int
+    year: Optional[int]
 
 
 class ResumeData(BaseModel):
