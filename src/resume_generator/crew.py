@@ -12,6 +12,12 @@ content_source = CrewDoclingSource(
     ],
 )
 
+skills_content_source = CrewDoclingSource(
+	file_paths=[
+		"https://twiliofilesacceptgo.s3.us-east-1.amazonaws.com/skills_catalog.md"
+	],
+)
+
 
 @CrewBase
 class ResumeGenerator():
@@ -39,6 +45,14 @@ class ResumeGenerator():
             config=self.agents_config['json_formatter'],
             verbose=True
         )
+	
+	@agent
+	def skills_extractor(self) -> Agent:
+		return Agent(
+			config=self.agents_config['skills_extractor'],
+			verbose=True,
+			knowledge_sources=[skills_content_source]
+		)
 
 	# To learn more about structured task outputs, 
 	# task dependencies, and task callbacks, check out the documentation:
@@ -54,6 +68,12 @@ class ResumeGenerator():
 		return Task(
             config=self.tasks_config['structure_cv'],
         )
+	
+	@task
+	def extract_skills(self) -> Task:
+		return Task(
+			config=self.tasks_config['extract_skills'],
+		)
 
 	@crew
 	def crew(self) -> Crew:
@@ -65,6 +85,5 @@ class ResumeGenerator():
 			agents=self.agents, # Automatically created by the @agent decorator
 			tasks=self.tasks, # Automatically created by the @task decorator
 			process=Process.sequential,
-			verbose=True,
 			# process=Process.hierarchical, # In case you wanna use that instead https://docs.crewai.com/how-to/Hierarchical/
 		)

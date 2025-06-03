@@ -88,3 +88,28 @@ structure_cv:
   expected_output: >
     Un JSON limpio y estructurado con los campos mencionados. No incluyas explicaciones ni formato extra. Solo el JSON válido.
   agent: json_formatter
+
+extract_skills:
+  description: >
+    Extrae todas las habilidades explícitamente mencionadas en el siguiente conjunto de datos del usuario:
+
+    - Datos personales: {personal_data}
+    - Educación: {education}
+    - Experiencia laboral: {experience}
+    - Habilidades: {skills}
+    - Idiomas: {languages}
+    - Certificaciones: {certifications}
+    - Resumen profesional: {professional_summary}
+
+    Devuelve un JSON con la estructura:
+
+    {
+      "skills": ["skill1", "skill2", ...]
+    }
+
+    Las habilidades deben ser exactamente las que aparecen en los datos.
+    No inventes ni infieras nada.
+    No incluyas duplicados ni habilidades que no estén explícitamente mencionadas.
+  expected_output: >
+    Un JSON limpio y válido con la lista de habilidades.
+  agent: skills_extractor

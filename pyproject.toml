@@ -5,9 +5,11 @@ description = "resume-generator using crewAI"
 authors = [{ name = "Hugo Alejandro Apaza Huaycho", email = "apazahuaychohugoalejandro@gmail.com" }]
 requires-python = ">=3.10,<3.13"
 dependencies = [
+    "boto3>=1.38.27",
     "crewai[tools]>=0.105.0,<1.0.0",
     "docling>=2.31.0",
     "fastapi[standard]>=0.115.12",
+    "uuid>=1.30",
 ]
 
 [project.scripts]

@@ -25,6 +25,7 @@ from .resume_schema import (
     ResumeData,
     Skill,
 )
+from .skill_entry import SkillEntry
 
 __all__ = [
     # Input schema
@@ -45,4 +46,5 @@ __all__ = [
     "Skill",
     "Language",
     "Certification",
+    "SkillEntry"
 ]
