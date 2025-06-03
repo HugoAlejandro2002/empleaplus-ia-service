@@ -12,4 +12,10 @@ dynamodb = boto3.resource(
 )
 
 def get_skills_table():
-    return dynamodb.Table(settings.dynamodb_table_name)
+    return dynamodb.Table(settings.dynamodb_skills_table)
+
+def get_users_table():
+    return dynamodb.Table(settings.dynamodb_users_table)
+
+def get_resumes_table():
+    return dynamodb.Table(settings.dynamodb_resumes_table)

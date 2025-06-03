@@ -9,6 +9,8 @@ dependencies = [
     "crewai[tools]>=0.105.0,<1.0.0",
     "docling>=2.31.0",
     "fastapi[standard]>=0.115.12",
+    "passlib[bcrypt]>=1.7.4",
+    "python-jose>=3.5.0",
     "uuid>=1.30",
 ]
 

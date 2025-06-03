@@ -8,6 +8,7 @@ from models import InputCVRequest, ResumeData
 from services import ResumeService
 
 router = APIRouter()
+
 resume_service = ResumeService()
 
 @router.post("/generate", response_model=ResumeData)

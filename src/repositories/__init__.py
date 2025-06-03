@@ -1,3 +1,4 @@
 from .skills_repository import SkillsRepository
+from .user_repository import UsersRepository
 
-__all__ = ["SkillsRepository"]
+__all__ = ["SkillsRepository", "UsersRepository"]

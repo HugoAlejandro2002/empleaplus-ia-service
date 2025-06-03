@@ -26,6 +26,7 @@ from .resume_schema import (
     Skill,
 )
 from .skill_entry import SkillEntry
+from .user_schema import UserDB, UserLoginRequest, UserRegisterRequest
 
 __all__ = [
     # Input schema
@@ -46,5 +47,10 @@ __all__ = [
     "Skill",
     "Language",
     "Certification",
-    "SkillEntry"
+
+    "SkillEntry",
+
+    "UserDB",
+    "UserRegisterRequest",
+    "UserLoginRequest",
 ]
