@@ -6,6 +6,7 @@ from .cv_schema import (
     ExperienceItem,
     InputCVRequest,
     ProfessionalSummary,
+    RenameResumeRequest,
 )
 from .cv_schema import (
     Language as InputLanguage,
@@ -23,6 +24,7 @@ from .resume_schema import (
     Experience,
     Language,
     ResumeData,
+    ResumeReference,
     Skill,
 )
 from .skill_entry import SkillEntry
@@ -39,6 +41,8 @@ __all__ = [
     "InputCertification",
     "ProfessionalSummary",
 
+    "RenameResumeRequest",
+
     # Output schema
     "ResumeData",
     "Contact",
@@ -47,6 +51,8 @@ __all__ = [
     "Skill",
     "Language",
     "Certification",
+
+    "ResumeReference",
 
     "SkillEntry",
 

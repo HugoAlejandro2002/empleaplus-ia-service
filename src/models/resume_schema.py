@@ -50,3 +50,9 @@ class ResumeData(BaseModel):
     languages: List[Language]
     certifications: List[Certification]
     summary: str  # noqa: N815
+
+
+class ResumeReference(BaseModel):
+    id: str
+    filename: str
+    created_at: str

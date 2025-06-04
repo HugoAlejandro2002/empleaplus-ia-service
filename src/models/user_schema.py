@@ -2,6 +2,8 @@ from typing import List
 
 from pydantic import BaseModel, EmailStr, Field
 
+from .resume_schema import ResumeReference
+
 
 class UserRegisterRequest(BaseModel):
     email: EmailStr
@@ -14,4 +16,4 @@ class UserLoginRequest(BaseModel):
 class UserDB(BaseModel):
     email: EmailStr
     password: str
-    cvs: List[str] = Field(default_factory=list)
+    cvs: List[ResumeReference] = Field(default_factory=list)

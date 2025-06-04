@@ -1,6 +1,6 @@
 from typing import List, Optional
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
 
 class PersonalData(BaseModel):
@@ -49,3 +49,6 @@ class InputCVRequest(BaseModel):
     languages: List[Language]
     certifications: List[Certification]
     professionalSummary: ProfessionalSummary # noqa: N815
+
+class RenameResumeRequest(BaseModel):
+    filename: str = Field(..., min_length=3, max_length=255, pattern=r"^[\w\-. ]+$")
