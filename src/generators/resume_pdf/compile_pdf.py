@@ -18,8 +18,8 @@ def compile_latex_to_pdf(latex_code: str, filename: str = "cv") -> Path:
         subprocess.run(
             ["pdflatex", "-interaction=nonstopmode", "-output-directory", str(temp_path), str(tex_file)],
             check=True,
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
         )
 
         if not pdf_file.exists():

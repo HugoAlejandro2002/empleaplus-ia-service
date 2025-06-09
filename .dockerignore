@@ -1,0 +1,31 @@
+# Python y entorno
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ruff_cache
+# Virtualenv (aunque usas uv, puede haber venv/local envs)
+venv/
+.env
+
+# Metadata de Git o editor
+.git/
+.gitignore
+.idea/
+.vscode/
+
+# Archivos de compilación y de proyecto
+*.log
+*.aux
+*.toc
+*.out
+*.pdf
+*.zip
+*.tar.gz
+
+# Archivos de LaTeX auxiliares
+*.synctex.gz
+
+# Archivos de contenedor y caché
+:contentReference[oaicite:1]{index=1}
+*.dockerignore
