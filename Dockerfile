@@ -31,4 +31,5 @@ COPY ./knowledge ./knowledge
 
 EXPOSE 8000
 
-CMD ["uv", "run", "python", "src/main.py"]
+ENV PYTHONPATH=/app/src
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
