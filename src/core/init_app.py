@@ -45,6 +45,10 @@ def create_app() -> FastAPI:
         allow_headers=["*"],
     )
 
+    @app.get("/")
+    def root():
+        return {"message": "Server running"}
+
     app.include_router(api_router, prefix="/api/v1")
 
     app.openapi = lambda: custom_openapi(app)
