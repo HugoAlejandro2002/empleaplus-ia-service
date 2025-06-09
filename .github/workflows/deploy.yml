@@ -28,7 +28,7 @@ jobs:
 
       - name: Tag Docker image
         run: |
-          docker tag resume_generator-fastapi-app:latest ${{ secrets.ECR_REPOSITORY }}:latest
+          docker tag resume-builder-backend:latest ${{ secrets.ECR_REPOSITORY }}:latest
 
       - name: Push to ECR
         run: |

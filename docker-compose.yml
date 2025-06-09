@@ -1,14 +1,6 @@
 services:
   fastapi-app:
+    image: resume-builder-backend
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: fastapi_latex_app
-    ports:
-      - "8000:8000"
-    env_file:
-      - .env
-    restart: always
-
-volumes:
-  pdf_output:
