@@ -1,4 +1,4 @@
-from core import create_app
+from src.core import create_app
 
 app = create_app()
 

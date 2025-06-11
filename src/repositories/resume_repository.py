@@ -1,6 +1,6 @@
-from core import get_resumes_table
-from models import ResumeData
-from utils import generate_uuid
+from src.core import get_resumes_table
+from src.models import ResumeData
+from src.utils import generate_uuid
 
 
 class ResumeRepository:

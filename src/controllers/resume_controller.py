@@ -4,9 +4,9 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import FileResponse
 from starlette.background import BackgroundTask
 
-from dependencies.auth import get_current_user_email
-from models import InputCVRequest, RenameResumeRequest, ResumeData
-from services import ResumeService, UserService
+from src.dependencies.auth import get_current_user_email
+from src.models import InputCVRequest, RenameResumeRequest, ResumeData
+from src.services import ResumeService, UserService
 
 router = APIRouter(dependencies=[Depends(get_current_user_email)] )
 

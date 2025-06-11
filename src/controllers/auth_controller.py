@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-from models import UserLoginRequest, UserRegisterRequest
-from services import AuthService
+from src.models import UserLoginRequest, UserRegisterRequest
+from src.services import AuthService
 
 router = APIRouter()
 

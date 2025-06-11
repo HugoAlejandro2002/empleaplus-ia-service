@@ -1,6 +1,6 @@
 from typing import Any
 
-from models import ResumeData, SkillEntry
+from src.models import ResumeData, SkillEntry
 
 from .json_cleaner import clean_json_output
 from .uuid_generator import generate_uuid

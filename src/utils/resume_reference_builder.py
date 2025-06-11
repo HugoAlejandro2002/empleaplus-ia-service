@@ -1,7 +1,7 @@
 import re
 from datetime import datetime, timezone
 
-from models import ResumeReference
+from src.models import ResumeReference
 
 
 def build_resume_reference(resume_id: str, full_name: str) -> ResumeReference:

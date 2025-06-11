@@ -1,5 +1,5 @@
-from core import get_skills_table
-from models import SkillEntry
+from src.core import get_skills_table
+from src.models import SkillEntry
 
 
 class SkillsRepository:

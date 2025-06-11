@@ -1,6 +1,6 @@
 from typing import Any
 
-from models import (
+from src.models import (
     Certification,
     Contact,
     Education,

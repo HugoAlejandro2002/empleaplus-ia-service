@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from models import ResumeData
+from src.models import ResumeData
 
 from .formatter import (
     format_certifications,

@@ -16,13 +16,6 @@ dependencies = [
     "uvicorn[standard]>=0.34.2",
 ]
 
-[project.scripts]
-resume_generator = "resume_generator.main:run"
-run_crew = "resume_generator.main:run"
-train = "resume_generator.main:train"
-replay = "resume_generator.main:replay"
-test = "resume_generator.main:test"
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"

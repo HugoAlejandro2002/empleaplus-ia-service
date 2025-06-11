@@ -1,10 +1,10 @@
 from pathlib import Path
 
-from generators.resume_pdf import compile_latex_to_pdf, generate_cv_latex
-from models import InputCVRequest, ResumeData
-from repositories import ResumeRepository, SkillsRepository, UsersRepository
-from resume_generator import ResumeGenerator
-from utils import (
+from src.generators.resume_pdf import compile_latex_to_pdf, generate_cv_latex
+from src.models import InputCVRequest, ResumeData
+from src.repositories import ResumeRepository, SkillsRepository, UsersRepository
+from src.resume_generator import ResumeGenerator
+from src.utils import (
     build_resume_reference,
     build_skill_entry,
     clean_json_output,

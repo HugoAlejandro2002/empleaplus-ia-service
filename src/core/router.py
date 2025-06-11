@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from controllers import auth_router, resume_router
+from src.controllers import auth_router, resume_router
 
 router = APIRouter()
 

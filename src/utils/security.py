@@ -4,7 +4,7 @@ from fastapi import HTTPException, status
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 
-from core import get_settings
+from src.core import get_settings
 
 settings = get_settings()
 

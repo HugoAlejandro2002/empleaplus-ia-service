@@ -1,5 +1,5 @@
-from core import get_users_table
-from models import ResumeReference, UserDB
+from src.core import get_users_table
+from src.models import ResumeReference, UserDB
 
 
 class UsersRepository:

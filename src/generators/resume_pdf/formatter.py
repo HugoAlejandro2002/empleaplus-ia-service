@@ -1,4 +1,4 @@
-from models import Certification, Contact, Education, Experience, Language, Skill
+from src.models import Certification, Contact, Education, Experience, Language, Skill
 
 
 def format_header(full_name: str, contact: Contact) -> str:
