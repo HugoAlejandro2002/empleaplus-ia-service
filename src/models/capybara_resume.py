@@ -65,7 +65,7 @@ class CapybaraResume(BaseModel):
     contact: CapybaraContact
     education: List[CapybaraEducation]
     experience: List[CapybaraExperience]
-    projectExperience: Optional[CapybaraProjectExperience]  # noqa: N815
+    projectExperience: Optional[CapybaraProjectExperience] = None  # noqa: N815
     skills: List[str]
     softwares: List[str]
     languages: List[CapybaraLanguage]
