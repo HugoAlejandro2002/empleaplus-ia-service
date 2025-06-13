@@ -25,4 +25,5 @@ def generate_cv_latex(resume: ResumeData) -> str:
     latex_filled = latex_filled.replace("{{ skills_and_languages }}", format_skills_and_languages(resume.skills, resume.languages))
     latex_filled = latex_filled.replace("{{ certifications }}", format_certifications(resume.certifications))
 
-    return latex_filled.replace('%', r'\%')
+    return latex_filled.replace('%', r'\%') \
+

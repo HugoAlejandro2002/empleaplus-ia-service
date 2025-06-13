@@ -1,3 +1,13 @@
+from .capybara_resume import (
+    CapybaraAchievement,
+    CapybaraComplementaryEducation,
+    CapybaraContact,
+    CapybaraEducation,
+    CapybaraExperience,
+    CapybaraLanguage,
+    CapybaraProjectExperience,
+    CapybaraResume,
+)
 from .cv_schema import (
     Certification as InputCertification,
 )
@@ -59,4 +69,14 @@ __all__ = [
     "UserDB",
     "UserRegisterRequest",
     "UserLoginRequest",
+
+    # Capybara Resume Models
+    "CapybaraResume",
+    "CapybaraContact",
+    "CapybaraEducation",
+    "CapybaraExperience",
+    "CapybaraProjectExperience",
+    "CapybaraLanguage",
+    "CapybaraAchievement",
+    "CapybaraComplementaryEducation",
 ]
