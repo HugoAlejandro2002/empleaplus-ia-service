@@ -1,0 +1,90 @@
+### 📘 EDUCACIÓN
+
+- Universidad Privada Boliviana – Licenciatura en Ingeniería Comercial. Graduado con máximos honores: Summa Cum Laude. Promedio general: 96.87/100. Becas: Excelencia académica (100%), Beca Top 100 (50%). Cuadro de Honor: 2017-2020.
+- Nova School of Business and Economics (Portugal) – Maestría Internacional en Gestión. Becas de Excelencia y Movilidad Social (100% matrícula).
+- Universidad Católica Boliviana – Licenciatura en Ingeniería Ambiental. Becas 80%, Mejor promedio de carrera (96.5/100 y 94.17/100).
+- Universidad de Ciencias Aplicadas de Hamburgo – Semestre de Intercambio.
+- Universidad Privada Boliviana – Licenciatura en Ingeniería de Sistemas. Cuadro de Honor y promedio 96.63/100. Becario “Talento” (90%).
+
+---
+
+### 💼 EXPERIENCIA PROFESIONAL
+
+**AcceptGO** – Desarrollador de Software
+- Desarrollé un sistema web con Next.js y LLMs para una red profesional SaaS.
+- Automatización de evaluación de CVs usando AWS (SNS, Lambda), Python y DynamoDB, reduciendo el tiempo de revisión en un 95%.
+- Implementación de recordatorios automatizados por WhatsApp con AWS y FastAPI, mejorando la retención en un 20%.
+
+**Universidad Privada Boliviana** – Líder backend
+- Lideré un equipo de 10 devs creando un juez online con MongoDB y Express.js, beneficiando a 200+ estudiantes.
+
+**Grupo Hotelero Panorama – Hotel Atix** – Ejecutivo de ventas
+- Gestioné cartera corporativa y logré 30 nuevos clientes.
+- Generé más de USD 30,000 en ventas en 6 meses.
+- Implementé campañas de marketing “Dayketing”.
+
+**Colgate-Palmolive** – Analista Jr. de Marketing
+- Analicé KPIs de más de 300 retailers para desarrollar estrategias comerciales.
+- Coordiné campañas promocionales (+5% ventas).
+- Gestioné presupuesto anual por canal.
+
+**CBN (AB InBev)** – Analista de Cuentas Clave
+- Diseñé dos campañas de Trade Marketing, aumentando ventas en 5%.
+- Rediseñé imagen B2B para más de 100 restaurantes.
+
+**Kimera** – Analista Comercial
+- Diseñé campañas digitales, aumentando seguidores en 20%.
+
+**Klima-ACT (Alemania)** – Encargada de Sostenibilidad
+- Diseñé inventario de emisiones GEI, objetivos SBTi y estrategias de mitigación.
+- Automatización de cálculos en Google Sheets y generación de informes corporativos para la ONU.
+
+**BIO-PLASTICS EUROPE** – Administradora de Experiencia
+- Coordinación de 12 experimentos UX con 200 usuarios. Tasa de finalización: 70%.
+
+**Mamut** – Encargada de Sostenibilidad
+- Modelado de ahorro energético y análisis ambiental en EDGE.
+
+**AIESEC Alemania** – UX Intern
+- Wireframing y prototipado de 9 interfaces en Figma.
+- Automatización de 30 plantillas con Apps Script y Google Sheets.
+
+---
+
+### 🧠 HABILIDADES Y TECNOLOGÍAS
+
+- Lenguajes: Python, TypeScript, Node.js, SQL, NoSQL
+- Frameworks: FastAPI, Express.js, Next.js
+- Herramientas: Figma, Google Sheets, Excel VBA, SAP, Canva, AWS, Mendeley
+- Competencias: Automatización, análisis de datos, liderazgo, UX/UI, diseño estratégico, programación competitiva
+
+---
+
+### 🌍 IDIOMAS
+
+- Español: Nativo
+- Inglés: Avanzado (TOEFL iBT 93, Duolingo 128)
+- Portugués: Básico (A2)
+- Alemán: Básico
+
+---
+
+### 🏆 LOGROS Y PREMIOS
+
+- Beca Talento (UPB)
+- Beca Líderes de Bolivia
+- Lista de Honor – Stanford Rebuild (AcceptGO)
+- 10º lugar ICPC Latinoamérica
+- 2º lugar StartUp Weekend (proyecto reciclaje)
+- Reconocimiento “Bachiller de Excelencia”
+- Certificaciones MITx Python y Scrum Foundation
+- Certificado Excel Avanzado (Certiport)
+
+---
+
+### 👥 LIDERAZGO Y VOLUNTARIADO
+
+- Sociedad Científica de Ingeniería Ambiental – Organización de eventos +1000 asistentes, presupuesto $24K.
+- Tu Beca Bolivia – Organización de entrevistas con fundadores, impacto a 1400 estudiantes.
+- Voces Vitales Bolivia – Talleres de canto para jóvenes con discapacidad.
+- Girls for Girls (Harvard Kennedy School) – Participación en programa de mentoría femenina.

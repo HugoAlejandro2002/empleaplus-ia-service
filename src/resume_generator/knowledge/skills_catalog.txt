@@ -1,0 +1,148 @@
+# Banco de Habilidades Profesionales
+
+- AWS
+- Adaptabilidad
+- Administración de sistemas
+- Administración pública
+- Agile
+- Angular
+- Análisis competitivo
+- Análisis de datos
+- Análisis de requerimientos
+- Análisis financiero
+- Aprendizaje continuo
+- Arquitectura de software
+- Atención al cliente
+- Auditoría externa
+- Auditoría interna
+- Automatización de procesos
+- Azure
+- Benchmarking
+- Branding
+- C#
+- C++
+- CI/CD
+- CRM
+- Cadena de suministro
+- Ciberseguridad
+- Cloud Computing
+- Coaching ejecutivo
+- Colaboración asincrónica
+- Comercio electrónico
+- Comunicación efectiva
+- Comunicación institucional
+- Contabilidad financiera
+- Control de calidad
+- Copywriting
+- Criptografía
+- Customer success
+- Desarrollo móvil
+- Desarrollo organizacional
+- Desarrollo web
+- Diseño centrado en el usuario
+- Diseño de experiencia de usuario
+- Diseño de interfaces
+- Diseño gráfico
+- Diseño instruccional
+- Django
+- Docker
+- Documentación técnica
+- ERP
+- Elaboración de informes
+- Email marketing
+- Entrenamiento de equipos
+- Estrategias de fidelización
+- Evaluación de desempeño
+- Evaluación de impacto
+- Excel avanzado
+- Facilitación de reuniones
+- Facilitación de talleres
+- Firebase
+- Firewall configuration
+- Flask
+- Gestión de bases de datos
+- Gestión de campañas
+- Gestión de conflictos
+- Gestión de conocimiento
+- Gestión de crisis
+- Gestión de eventos
+- Gestión de identidad
+- Gestión de inventarios
+- Gestión de la innovación
+- Gestión de proyectos
+- Gestión de riesgos
+- Gestión de stakeholders
+- Gestión de talento
+- Gestión del tiempo
+- Gestión documental
+- Go
+- Google Cloud
+- Habilidades interpersonales
+- Innovación empresarial
+- Integraciones API
+- Inteligencia artificial
+- Inteligencia emocional
+- Investigación científica
+- Investigación de mercado
+- Java
+- JavaScript
+- Kanban
+- Kubernetes
+- Laravel
+- Lean
+- Liderazgo
+- Logística
+- Machine learning
+- Marketing digital
+- Mentoría
+- Metodologías de mejora continua
+- MongoDB
+- MySQL
+- Negociación
+- NoSQL
+- Node.js
+- Normativas ISO
+- Penetration testing
+- Pensamiento crítico
+- Planificación estratégica
+- Planificación operativa
+- PostgreSQL
+- Power BI
+- Presentaciones ejecutivas
+- Presupuestación
+- Prospección comercial
+- Prototipado
+- Publicidad en redes sociales
+- Python
+- RPA
+- React
+- Redacción técnica
+- Redis
+- Resolución de problemas
+- Responsabilidad social corporativa
+- Rust
+- SEM
+- SEO
+- SQL
+- Scrum
+- Seguridad informática
+- Selección de personal
+- Simulación de procesos
+- Sistemas de gestión empresarial
+- Six Sigma
+- Soporte técnico
+- Sostenibilidad empresarial
+- Spring Boot
+- Tableau
+- Testing automatizado
+- Toma de decisiones
+- Trabajo en equipo
+- Trabajo remoto
+- Transformación digital
+- TypeScript
+- User onboarding
+- Ventas B2B
+- Ventas B2C
+- Visualización de datos
+- Vue.js
+- Wireframing

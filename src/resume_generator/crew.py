@@ -1,23 +1,20 @@
+from pathlib import Path
+
 from crewai import Agent, Crew, Process, Task
-from crewai.knowledge.source.crew_docling_source import CrewDoclingSource
+from crewai.knowledge.source.text_file_knowledge_source import TextFileKnowledgeSource
 from crewai.project import CrewBase, agent, crew, task
 
 # If you want to run a snippet of code before or after the crew starts, 
 # you can use the @before_kickoff and @after_kickoff decorators
 # https://docs.crewai.com/concepts/crews#example-crew-class-with-decorators
 
-content_source = CrewDoclingSource(
-    file_paths=[
-        "https://twiliofilesacceptgo.s3.us-east-1.amazonaws.com/cv_oraciones_modelo.md"
-    ],
+content_source = TextFileKnowledgeSource(
+    file_paths=["cv_oraciones_modelo.txt"]
 )
 
-skills_content_source = CrewDoclingSource(
-	file_paths=[
-		"https://twiliofilesacceptgo.s3.us-east-1.amazonaws.com/skills_catalog.md"
-	],
+skills_content_source = TextFileKnowledgeSource(
+    file_paths=["skills_catalog.txt"]
 )
-
 
 @CrewBase
 class ResumeGenerator():
