@@ -1,6 +1,5 @@
 \documentclass[10pt, letterpaper]{article}
 
-
 \usepackage[
     ignoreheadfoot,
     top=2cm,
@@ -13,41 +12,48 @@
 \usepackage{tabularx}
 \usepackage{array}
 \usepackage[dvipsnames]{xcolor}
-\definecolor{primaryColor}{RGB}{0,0,0}
 \usepackage{enumitem}
 \usepackage{fontawesome5}
 \usepackage{hyperref}
 \usepackage{charter}
+\usepackage{multicol}
+
+% --- Custom color ---
+\definecolor{sectionColor}{RGB}{60,60,60}
 
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
 \pagenumbering{gobble}
-\titleformat{\section}{\large\bfseries}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titleformat{\section}{\large\color{sectionColor}\bfseries}{}{0pt}{}[\vspace{1pt}\titlerule]
 \titlespacing{\section}{0pt}{0.3cm}{0.2cm}
 
 \begin{document}
 
 {{ header }}
 
+\vspace{0.1cm}
+{{ contact }}
 
-\section*{Objetivo}
-{{ summary }}
+\vspace{0.4cm}
+{{ skills_and_softwares }}
 
-
-\section*{Educación}
-{{ education }}
-
-
-\section*{Experiencia Profesional}
+\vspace{0.4cm}
 {{ experience }}
 
+\vspace{0.4cm}
+{{ project_experience }}
 
-\section*{Idiomas \& Habilidades}
-{{ skills_and_languages }}
+\vspace{0.4cm}
+{{ education }}
 
+\vspace{0.4cm}
+{{ achievements }}
 
-\section*{Certificaciones}
-{{ certifications }}
+\vspace{0.4cm}
+{{ complementary_education }}
+
+\vspace{0.4cm}
+{{ languages }}
 
 \end{document}
