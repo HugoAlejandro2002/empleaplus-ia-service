@@ -13,7 +13,11 @@
 \usepackage{array}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{enumitem}
-\setlist[itemize]{nosep, leftmargin=*, topsep=0pt, partopsep=0pt}
+
+\setlength{\extrarowheight}{2pt}
+\renewcommand{\arraystretch}{1.2}
+\setlist[itemize]{nosep,leftmargin=*,itemsep=1pt,topsep=2pt, partopsep=1pt}
+
 \usepackage{fontawesome5}
 \usepackage{hyperref}
 \usepackage{charter}
@@ -33,10 +37,8 @@
 
 {{ header }}
 
-\vspace{0.1cm}
 {{ contact }}
 
-\vspace{0.2cm}
 {{ skills_and_softwares }}
 
 \vspace{0.2cm}
