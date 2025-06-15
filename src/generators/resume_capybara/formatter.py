@@ -53,33 +53,60 @@ def format_experience(experiences: list[CapybaraExperience]) -> str:
     if not experiences:
         return ""
 
-    section = "\\vspace{0.2cm}\\textbf{EXPERIENCIA LABORAL}\\\\\n"
+    section = "\\textbf{EXPERIENCIA LABORAL}\\\\\n"
     for exp in experiences:
-        section += f"\\textbf{{{escape(exp.company)}}} \\hfill {escape(exp.startDate)} -- {escape(exp.endDate)}\\\\\n"
+        # bloque empresa + fechas
+        section += "\\begin{tabularx}{\\textwidth}{Xr}\n"
+        section += (
+            f"\\textbf{{{escape(exp.company)}}} & "
+            f"{escape(exp.startDate)} -- {escape(exp.endDate)}\\\\\n"
+        )
+        section += "\\end{tabularx}\n"
+        # datos relevantes (si aplica)
         if exp.relevantCompanyData:
             section += f"{escape(exp.relevantCompanyData)}\\\\\n"
-        section += f"{escape(exp.position)} \\hfill {escape(exp.city)}, {escape(exp.country)}\\\\\n"
-        section += "\\begin{itemize}[leftmargin=*]\n"
+        # bloque cargo + ciudad
+        section += "\\begin{tabularx}{\\textwidth}{Xr}\n"
+        section += (
+            f"{escape(exp.position)} & "
+            f"{escape(exp.city)}, {escape(exp.country)}\\\\\n"
+        )
+        section += "\\end{tabularx}\n"
+        # bullets sin espacios extra
+        section += "\\begin{itemize}[nosep,leftmargin=*]\n"
         for s in exp.successSentences:
-            section += f"\\item {escape(s)}\n"
-        section += "\\end{itemize}\\vspace{0.2cm}\n"
+            section += f"  \\item {escape(s)}\n"
+        section += "\\end{itemize}\n"
     return section
-
 
 def format_project_experience(projects: CapybaraProjectExperience) -> str:
     if not projects or not projects.experiences:
         return ""
 
-    section = f"\\vspace{{0.2cm}}\\textbf{{{escape(projects.titleSection).upper()}}}\\\\\n"
+    section = f"\\textbf{{{escape(projects.titleSection).upper()}}}\\\\\n"
     for exp in projects.experiences:
-        section += f"\\textbf{{{escape(exp.company)}}} \\hfill {escape(exp.startDate)} -- {escape(exp.endDate)}\\\\\n"
+        # bloque empresa + fechas
+        section += "\\begin{tabularx}{\\textwidth}{Xr}\n"
+        section += (
+            f"\\textbf{{{escape(exp.company)}}} & "
+            f"{escape(exp.startDate)} -- {escape(exp.endDate)}\\\\\n"
+        )
+        section += "\\end{tabularx}\n"
+        # datos relevantes (si aplica)
         if exp.relevantCompanyData:
             section += f"{escape(exp.relevantCompanyData)}\\\\\n"
-        section += f"{escape(exp.position)} \\hfill {escape(exp.city)}, {escape(exp.country)}\\\\\n"
-        section += "\\begin{itemize}[leftmargin=*]\n"
+        # bloque cargo + ciudad
+        section += "\\begin{tabularx}{\\textwidth}{Xr}\n"
+        section += (
+            f"{escape(exp.position)} & "
+            f"{escape(exp.city)}, {escape(exp.country)}\\\\\n"
+        )
+        section += "\\end{tabularx}\n"
+        # bullets sin espacios extra
+        section += "\\begin{itemize}[nosep,leftmargin=*]\n"
         for s in exp.successSentences:
-            section += f"\\item {escape(s)}\n"
-        section += "\\end{itemize}\\vspace{0.2cm}\n"
+            section += f"  \\item {escape(s)}\n"
+        section += "\\end{itemize}\n"
     return section
 
 
@@ -87,12 +114,24 @@ def format_education(education: list[CapybaraEducation]) -> str:
     if not education:
         return ""
 
-    section = "\\vspace{0.2cm}\\textbf{EDUCACIÓN}\\\\\n"
+    section = "\\textbf{EDUCACIÓN}\\\\\n"
     for ed in education:
-        section += f"{escape(ed.degree)}, {escape(ed.institution)} \\hfill {escape(ed.startDate)} -- {escape(ed.endDate)}\\\\\n"
+        section += "\\begin{tabularx}{\\textwidth}{Xr}\n"
+
+        # Fila 1: Grado/Institución  |  Fechas
+        section += (
+            f"{escape(ed.degree)}, {escape(ed.institution)}"
+            f" & {escape(ed.startDate)} -- {escape(ed.endDate)}\\\\\n"
+        )
+
+        # Fila 2: • Detalle  | Ciudad, País
         if ed.relevantEducationData:
-            section += f"\\begin{{itemize}}[leftmargin=*]\n\\item {escape(ed.relevantEducationData)}\n\\end{{itemize}}\n"
-        section += f"\\hfill {escape(ed.city)}, {escape(ed.country)}\\\\\n"
+            left = f"\\textbullet\\ {escape(ed.relevantEducationData)}"
+        else:
+            left = ""
+        section += f"{left} & {escape(ed.city)}, {escape(ed.country)}\\\\\n"
+
+        section += "\\end{tabularx}\n"
     return section
 
 
@@ -135,5 +174,5 @@ def format_complementary_education(courses: list[CapybaraComplementaryEducation]
 def format_languages(languages: list[CapybaraLanguage]) -> str:
     if not languages:
         return ""
-    langs = ", ".join([f"{escape(l.name)} ({escape(l.proficiency)})" for l in languages])
+    langs = ", ".join([f"{escape(lang.name)} ({escape(lang.proficiency)})" for lang in languages])
     return f"\\vspace{{0.4cm}}\n\\textbf{{IDIOMAS}}: {langs}\\\\\n"
