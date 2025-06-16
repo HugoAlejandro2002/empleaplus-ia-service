@@ -68,6 +68,6 @@ class CapybaraResume(BaseModel):
     projectExperience: Optional[CapybaraProjectExperience] = None  # noqa: N815
     skills: List[str]
     softwares: List[str]
-    languages: List[CapybaraLanguage]
+    languages: Optional[List[CapybaraLanguage]] = None
     achievements: Optional[List[CapybaraAchievement]] = None
     complementaryEducation: Optional[List[CapybaraComplementaryEducation]] = None  # noqa: N815
