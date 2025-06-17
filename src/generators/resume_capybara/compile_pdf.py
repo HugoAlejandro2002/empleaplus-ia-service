@@ -18,10 +18,12 @@ def compile_latex_to_pdf(latex_code: str, filename: str = "cv") -> Path:
         tex_file.write_text(latex_code, encoding="utf-8")
 
         result = subprocess.run(
-            ["pdflatex", "-interaction=nonstopmode", "-output-directory", str(temp_path), str(tex_file)],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            text=True  # <- para recibir stdout/stderr como strings, no bytes
+            ["pdflatex", "-interaction=nonstopmode",
+            "-output-directory", str(temp_path),
+            str(tex_file)],
+            stdout=subprocess.DEVNULL,       # descartamos la salida binaria
+            stderr=subprocess.PIPE,          # capturamos sólo errores/texto
+            text=True                        # stderr vendrá como str, no bytes
         )
 
         # Mostrar salida de pdflatex
