@@ -16,7 +16,7 @@ class CapybaraEducation(BaseModel):
     degree: str
     relevantEducationData: Optional[str]  # noqa: N815
     startDate: str  # noqa: N815
-    endDate: str  # noqa: N815
+    endDate: Optional[str]  # noqa: N815
     city: str
     country: str
 
@@ -26,7 +26,7 @@ class CapybaraExperience(BaseModel):
     position: str
     relevantCompanyData: Optional[str]  # noqa: N815
     startDate: str  # noqa: N815
-    endDate: str  # noqa: N815
+    endDate: Optional[str]  # noqa: N815
     city: str
     country: str
     successSentences: List[str]  # noqa: N815
@@ -64,7 +64,7 @@ class CapybaraResume(BaseModel):
     fullName: str  # noqa: N815
     contact: CapybaraContact
     education: List[CapybaraEducation]
-    experience: List[CapybaraExperience]
+    experience: Optional[List[CapybaraExperience]] = None 
     projectExperience: Optional[CapybaraProjectExperience] = None  # noqa: N815
     skills: List[str]
     softwares: List[str]

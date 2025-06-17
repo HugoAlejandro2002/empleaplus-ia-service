@@ -191,7 +191,7 @@ def format_languages(languages: list[CapybaraLanguage]) -> str:
     if not languages:
         return ""
     langs = ", ".join(
-        [f"{escape(lang.name)} ({escape(lang.proficiency)})" for lang in languages]
+        [f"{escape(lang.name)} ({escape(lang.certification if lang.certification else lang.proficiency)})" for lang in languages]
     )
     section = "\\vspace{0.2cm}\n"
     section += f"\\noindent\\textbf{{IDIOMAS}}: {langs}\\\\\n"

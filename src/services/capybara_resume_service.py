@@ -1,10 +1,12 @@
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from dateutil.parser import parse
 
 from src.generators.resume_capybara import generate_capybara_pdf_resume
-from src.models import CapybaraResume
+from src.models import (
+    CapybaraResume,
+)
 
 
 class CapybaraResumeService:
@@ -13,21 +15,34 @@ class CapybaraResumeService:
         return generate_capybara_pdf_resume(prepared)
 
     def _prepare_resume(self, resume: CapybaraResume) -> CapybaraResume:
+
         def get_dt(val):
+            # 1) None = en curso → ahora
+            if val is None:
+                return datetime.now()
+            # 2) Si ya es datetime, úsalo
             if isinstance(val, datetime):
-                return val
-            try:
-                return parse(val)
-            except Exception:
-                return datetime.min
+                dt = val
+            else:
+                # 3) parsear string a datetime
+                try:
+                    dt = parse(val)
+                except Exception:
+                    return datetime.min
+            # 4) si viene con tzinfo, conviértelo a UTC y quita el tzinfo
+            if dt.tzinfo is not None:
+                dt = dt.astimezone(timezone.utc).replace(tzinfo=None)
+            return dt
 
         def fmt(val):
+            if val is None:
+                return "Actualidad"
             dt = get_dt(val)
             return dt.strftime("%m/%Y")
 
-        # 1) Ordenar y formatear EXPERIENCE
+        # ahora get_dt() siempre entrega datetime naive → sorted() funciona
         exps = sorted(
-            resume.experience,
+            resume.experience or [],
             key=lambda e: get_dt(e.endDate),
             reverse=True
         )
@@ -39,7 +54,8 @@ class CapybaraResumeService:
             for e in exps
         ]
 
-        # 2) Formatear EDUCATION (sin reordenar)
+        # — el resto igual que antes, usando get_dt/ fmt() —
+        # 2) EDUCATION
         formatted_eds = [
             ed.copy(update={
                 "startDate": fmt(ed.startDate),
@@ -48,7 +64,7 @@ class CapybaraResumeService:
             for ed in resume.education
         ]
 
-        # 3) Ordenar y formatear PROJECT EXPERIENCE (si existe)
+        # 3) PROJECT EXPERIENCE
         proj = resume.projectExperience
         if proj and proj.experiences:
             sorted_proj = sorted(
@@ -65,7 +81,7 @@ class CapybaraResumeService:
             ]
             proj = proj.copy(update={"experiences": formatted_proj})
 
-        # 4) Formatear ACHIEVEMENTS.date
+        # 4) ACHIEVEMENTS
         achs = None
         if resume.achievements:
             achs = [
@@ -73,7 +89,7 @@ class CapybaraResumeService:
                 for ach in resume.achievements
             ]
 
-        # 5) Formatear COMPLEMENTARY EDUCATION.date
+        # 5) COMPLEMENTARY EDUCATION
         comps = None
         if resume.complementaryEducation:
             comps = [
@@ -81,11 +97,10 @@ class CapybaraResumeService:
                 for c in resume.complementaryEducation
             ]
 
-        # 6) Reconstruir el CapybaraResume con todo formateado
         return resume.copy(update={
-            "experience":           formatted_exps,
-            "education":            formatted_eds,
-            "projectExperience":    proj,
-            "achievements":         achs,
+            "experience":            formatted_exps,
+            "education":             formatted_eds,
+            "projectExperience":     proj,
+            "achievements":          achs,
             "complementaryEducation": comps,
         })
