@@ -39,7 +39,7 @@ class CapybaraProjectExperience(BaseModel):
 
 class CapybaraLanguage(BaseModel):
     name: str
-    proficiency: str
+    proficiency: Optional[str]
     certification: Optional[str]
 
 

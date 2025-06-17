@@ -190,9 +190,16 @@ def format_complementary_education(
 def format_languages(languages: list[CapybaraLanguage]) -> str:
     if not languages:
         return ""
-    langs = ", ".join(
-        [f"{escape(lang.name)} ({escape(lang.certification if lang.certification else lang.proficiency)})" for lang in languages]
-    )
+    
+    def format_details(lang):
+        parts = []
+        if lang.proficiency:
+            parts.append(escape(lang.proficiency))
+        if lang.certification:
+            parts.append(escape(lang.certification))
+        return f"{escape(lang.name)} ({', '.join(parts)})" if parts else escape(lang.name)
+
+    langs = ", ".join(format_details(lang) for lang in languages)
     section = "\\vspace{0.2cm}\n"
     section += f"\\noindent\\textbf{{IDIOMAS}}: {langs}\\\\\n"
     return section
