@@ -26,6 +26,11 @@
 % --- Custom color ---
 \definecolor{sectionColor}{RGB}{60,60,60}
 
+\usepackage[utf8]{inputenc}      % para que LaTeX entienda UTF-8
+\DeclareUnicodeCharacter{202F}{\,}  % narrow no-break space → espacio fino
+\DeclareUnicodeCharacter{00A0}{~}   % no-break space → espacio duro
+\DeclareUnicodeCharacter{200B}{}    % zero‐width space → nada
+
 \pagestyle{empty}
 \setcounter{secnumdepth}{0}
 \setlength{\parindent}{0pt}
