@@ -1,5 +1,6 @@
 import subprocess
 import tempfile
+import unicodedata
 from pathlib import Path
 
 
@@ -10,6 +11,7 @@ def compile_latex_to_pdf(latex_code: str, filename: str = "cv") -> Path:
     Si hay un error de compilación, imprime stderr y lanza una excepción.
     """
     # 0) Sanitizar caracteres invisibles que LaTeX no entiende:
+    latex_code = unicodedata.normalize("NFC", latex_code)
     for bad, good in [
         ("\u200B", ""),   # zero‐width space
         ("\u202F", " "),  # narrow no-break → espacio normal
