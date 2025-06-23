@@ -42,7 +42,9 @@ def format_skills_and_languages(skills: list[Skill], languages: list[Language]) 
 \\textbf{{Skills:}} {skills_str}.
 """
 
-def format_certifications(certifications: list[Certification]) -> str:
+def format_certifications(certifications: list[Certification] = None) -> str:
+    if not certifications:
+        return ""
     lines = []
     for cert in certifications:
         lines.append(f"\\item {cert.name}, {cert.institution} ({cert.year})")

@@ -43,13 +43,13 @@ class Certification(BaseModel):
 
 class ResumeData(BaseModel):
     fullName: str  # noqa: N815
+    summary: str  # noqa: N815
     contact: Contact  # noqa: N815
     education: List[Education]
     experience: List[Experience]
     skills: List[Skill]
     languages: List[Language]
-    certifications: List[Certification]
-    summary: str  # noqa: N815
+    certifications: Optional[List[Certification]]
 
 
 class ResumeReference(BaseModel):
