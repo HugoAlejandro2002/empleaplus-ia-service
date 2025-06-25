@@ -38,7 +38,12 @@ from .resume_schema import (
     Skill,
 )
 from .skill_entry import SkillEntry
-from .user_schema import UserDB, UserLoginRequest, UserRegisterRequest
+from .user_schema import (
+    UserDB,
+    UserLoginRequest,
+    UserRegisterRequest,
+    UserResetPasswordRequest,
+)
 
 __all__ = [
     # Input schema
@@ -69,6 +74,7 @@ __all__ = [
     "UserDB",
     "UserRegisterRequest",
     "UserLoginRequest",
+    "UserResetPasswordRequest",
 
     # Capybara Resume Models
     "CapybaraResume",

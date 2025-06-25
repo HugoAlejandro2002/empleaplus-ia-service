@@ -13,6 +13,10 @@ class UserLoginRequest(BaseModel):
     email: EmailStr
     password: str
 
+class UserResetPasswordRequest(BaseModel):
+    oldPassword: str  # noqa: N815
+    newPassword: str = Field(min_length=6)  # noqa: N815
+
 class UserDB(BaseModel):
     email: EmailStr
     password: str

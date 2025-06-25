@@ -65,3 +65,10 @@ class UsersRepository:
         )
         return True
 
+
+    def update_user_password(self, email: str, new_hashed_password: str):
+        self.table.update_item(
+            Key={"email": email},
+            UpdateExpression="SET password = :p",
+            ExpressionAttributeValues={":p": new_hashed_password}
+        )

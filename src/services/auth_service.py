@@ -1,6 +1,11 @@
 from fastapi import HTTPException
 
-from src.models import UserDB, UserLoginRequest, UserRegisterRequest
+from src.models import (
+    UserDB,
+    UserLoginRequest,
+    UserRegisterRequest,
+    UserResetPasswordRequest,
+)
 from src.repositories import UsersRepository
 from src.utils import create_access_token, hash_password, verify_password
 
@@ -27,3 +32,13 @@ class AuthService:
 
         token = create_access_token(data={"sub": user.email})
         return {"access_token": token, "token_type": "bearer"}
+
+    def reset_password(self, data: UserResetPasswordRequest, email: str):
+        user = self.user_repo.get_user_by_email(email)
+        if not user or not verify_password(data.oldPassword, user.password):
+            raise HTTPException(status_code=404, detail="User not found")
+
+        hashed_pwd = hash_password(data.newPassword)
+        self.user_repo.update_user_password(email, hashed_pwd)
+
+        return {"message": "Password updated successfully"}
