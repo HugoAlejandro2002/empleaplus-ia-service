@@ -12,8 +12,8 @@ class Contact(BaseModel):
 class Education(BaseModel):
     institution: str
     degree: str
-    startYear: int  # noqa: N815
-    endYear: Optional[int]  # noqa: N815
+    startYear: str  # noqa: N815
+    endYear: Optional[str]  # noqa: N815
     description: Optional[str]
 
 
