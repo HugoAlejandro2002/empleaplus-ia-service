@@ -34,8 +34,8 @@ def test_format_education():
         Education(
             institution="MIT",
             degree="BSc Computer Science",
-            startYear=2015,
-            endYear=2019,
+            startYear="06/2015",
+            endYear="07/2019",
             description="Top student"
         )
     ]
